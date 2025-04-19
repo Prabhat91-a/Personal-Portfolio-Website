@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">P</span>
+            <span class="logo-dot"></span>
+            <span class="logo-text">ortfolio</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="animate-text">Welcome to My Portfolio</h1>
+                <p class="animate-text">I'm a Creative Developer</p>
+            </div>
+            <canvas id="canvas3d"></canvas>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="intro">I'm a passionate Full Stack Developer with expertise in creating modern, scalable web applications. With a strong foundation in both frontend and backend technologies, I specialize in building robust solutions that deliver exceptional user experiences.</p>
+                    
+                    <div class="skills-section">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Frontend Development</h4>
+                                <ul>
+                                    <li>React.js & Next.js</li>
+                                    <li>Vue.js & Nuxt.js</li>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>JavaScript (ES6+)</li>
+                                    <li>TypeScript</li>
+                                    <li>Responsive Design</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Backend Development</h4>
+                                <ul>
+                                    <li>Node.js & Express</li>
+                                    <li>Python & Django</li>
+                                    <li>RESTful APIs</li>
+                                    <li>GraphQL</li>
+                                    <li>MongoDB & PostgreSQL</li>
+                                    <li>Authentication & Security</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>DevOps & Tools</h4>
+                                <ul>
+                                    <li>Git & GitHub</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-section">
+                        <h3>Professional Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">April 2025 - Present</div>
+                                <div class="timeline-content">
+                                    <h4>Software Development Intern</h4>
+                                    <p>CodTech IT Solutions</p>
+                                    <ul class="experience-details">
+                                        <li>Working on full-stack development projects</li>
+                                        <li>Collaborating with senior developers on real-world applications</li>
+                                        <li>Learning and implementing modern development practices</li>
+                                        <li>Contributing to team projects and code reviews</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-section">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <h4>Master of Computer Applications (MCA)</h4>
+                            <p>Specialized in Software Development and Web Technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Online Voting System">
+                    </div>
+                    <div class="project-info">
+                        <h3>Secure Online Voting System</h3>
+                        <p>A blockchain-based e-voting platform ensuring secure, transparent, and tamper-proof elections.</p>
+                        <div class="project-tags">
+                            <span>Blockchain</span>
+                            <span>Node.js</span>
+                            <span>React</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Online Learning Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Learning Platform</h3>
+                        <p>A comprehensive e-learning platform with live classes and interactive quizzes.</p>
+                        <div class="project-tags">
+                            <span>Vue.js</span>
+                            <span>Django</span>
+                            <span>WebRTC</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Progressive Web App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Health & Fitness PWA</h3>
+                        <p>A progressive web application for fitness tracking and workout routines.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>PWA</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Virtual Assistant">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Virtual Assistant</h3>
+                        <p>An intelligent virtual assistant powered by machine learning.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>NLP</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>your.email@example.com</p>
+                        <button class="copy-btn" data-text="your.email@example.com">Copy Email</button>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+91 1234567890</p>
+                        <button class="copy-btn" data-text="+911234567890">Copy Number</button>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Your City, State</p>
+                        <button class="location-btn">View on Map</button>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html> 
