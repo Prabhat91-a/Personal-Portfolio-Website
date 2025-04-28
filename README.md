@@ -87,12 +87,10 @@ Prabhat Tiwari - [@Prabhat60258016](https://twitter.com/Prabhat60258016)
 
 #OUTPUT
 
-![Image](https://github.com/user-attachments/assets/7c9aa24a-6b4b-4a1a-9721-8aa700816e09)
-
-![Image](https://github.com/user-attachments/assets/fb50af08-7fdd-46c8-8857-f89719b0c483)
-
-![Image](https://github.com/user-attachments/assets/b5f88df7-23c0-4a36-a08c-4804a6b8f47c)
-
-![Image](https://github.com/user-attachments/assets/cd620cb6-4592-4999-b6e1-b3c38fce5ad5)
-
-![Image](https://github.com/user-attachments/assets/90820df1-8c23-405f-aea5-c01f13b161ec)
+![Image](https://github.com/user-attachments/assets/e78574ca-94c1-47d8-b28f-7270ddccdca5)
+![Image](https://github.com/user-attachments/assets/1869db6c-c65c-416c-a192-9b734c744293)
+![Image](https://github.com/user-attachments/assets/056b5087-5404-4f6d-9152-b8ef3ad50744)
+![Image](https://github.com/user-attachments/assets/a5453247-9860-42f3-bd3f-fcf7bfa86c3d)
+![Image](https://github.com/user-attachments/assets/130d2f8a-5a69-4b6b-b9ef-10fe5f4518e8)
+![Image](https://github.com/user-attachments/assets/50559ea0-0adf-4d9d-b5ea-df25c5ca75ac)
+![Image](https://github.com/user-attachments/assets/f60da97f-31e0-4201-8554-0679fbc5d47a)
