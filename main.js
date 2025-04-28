@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Remove ES module imports since we're using CDN
 // Initialize GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,12 +14,10 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
     
-    gsap.to(cursorFollower, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.5,
-        ease: 'power2.out'
-    });
+    setTimeout(() => {
+        cursorFollower.style.left = e.clientX + 'px';
+        cursorFollower.style.top = e.clientY + 'px';
+    }, 100);
 });
 
 document.addEventListener('mousedown', () => {
@@ -77,7 +76,43 @@ document.addEventListener('mousemove', (event) => {
     mouseY = (event.clientY - window.innerHeight / 2) * 0.005;
 });
 
-// Animation
+// Mobile menu functionality
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+});
+
+// Close mobile menu when clicking on a link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Performance optimization for Three.js
+let isMobile = window.innerWidth <= 768;
+let animationFrameId;
+
+// Optimize Three.js for mobile
+if (isMobile) {
+    geometry = new THREE.TorusKnotGeometry(1, 0.3, 50, 8); // Reduced complexity
+    material.opacity = 0.6;
+    renderer.setPixelRatio(1); // Lower pixel ratio for mobile
+}
+
+// Animation function
 function animate() {
     requestAnimationFrame(animate);
     
@@ -101,6 +136,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+// Start the animation
 animate();
 
 // Handle window resize
@@ -109,6 +145,24 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+// Cleanup function
+function cleanup() {
+    cancelAnimationFrame(animationFrameId);
+    geometry.dispose();
+    material.dispose();
+    renderer.dispose();
+    scene.remove(torusKnot);
+    
+    // Remove event listeners
+    window.removeEventListener('resize', handleResize);
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mousedown', handleMouseDown);
+    document.removeEventListener('mouseup', handleMouseUp);
+}
+
+// Add cleanup on page unload
+window.addEventListener('unload', cleanup);
 
 // GSAP Animations
 gsap.from('.hero h1', {
@@ -197,4 +251,181 @@ projectCards.forEach(card => {
             ease: 'power2.out'
         });
     });
+});
+
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+
+// Add scroll effect to navbar
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Add hover effect to links
+document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(1.5)';
+        cursorFollower.style.transform = 'scale(1.5)';
+        cursorFollower.style.borderColor = 'var(--accent-color)';
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        cursorFollower.style.transform = 'scale(1)';
+        cursorFollower.style.borderColor = 'var(--primary-color)';
+    });
+});
+
+// Copy button functionality
+document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const textToCopy = button.getAttribute('data-text');
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        });
+    });
+});
+
+// Form Validation and Submission
+const contactForm = document.getElementById('contact-form');
+const formGroups = contactForm.querySelectorAll('.form-group');
+
+// Validation patterns
+const patterns = {
+    name: /^[a-zA-Z\s]{2,50}$/,
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    subject: /^[\w\s-]{5,100}$/,
+    message: /^[\w\s.,!?-]{10,500}$/
+};
+
+// Error messages
+const errorMessages = {
+    name: 'Please enter a valid name (2-50 characters, letters only)',
+    email: 'Please enter a valid email address',
+    subject: 'Please enter a valid subject (5-100 characters)',
+    message: 'Please enter a message (10-500 characters)'
+};
+
+// Validate form fields
+function validateField(input) {
+    const field = input.id;
+    const value = input.value.trim();
+    const errorElement = input.nextElementSibling;
+    
+    if (!patterns[field].test(value)) {
+        input.classList.add('error');
+        errorElement.textContent = errorMessages[field];
+        errorElement.classList.add('visible');
+        return false;
+    }
+    
+    input.classList.remove('error');
+    errorElement.textContent = '';
+    errorElement.classList.remove('visible');
+    return true;
+}
+
+// Add validation on input
+formGroups.forEach(group => {
+    const input = group.querySelector('input, textarea');
+    input.addEventListener('input', () => validateField(input));
+    input.addEventListener('blur', () => validateField(input));
+});
+
+// Handle form submission
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Validate all fields
+    let isValid = true;
+    formGroups.forEach(group => {
+        const input = group.querySelector('input, textarea');
+        if (!validateField(input)) {
+            isValid = false;
+        }
+    });
+    
+    if (!isValid) return;
+    
+    // Add loading state
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    contactForm.classList.add('loading');
+    
+    try {
+        // Collect form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Simulate API call (replace with actual API endpoint)
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Show success message
+        showNotification('Message sent successfully!', 'success');
+        
+        // Reset form
+        contactForm.reset();
+        formGroups.forEach(group => {
+            const input = group.querySelector('input, textarea');
+            input.classList.remove('error');
+            const errorElement = input.nextElementSibling;
+            errorElement.textContent = '';
+            errorElement.classList.remove('visible');
+        });
+    } catch (error) {
+        showNotification('Failed to send message. Please try again.', 'error');
+    } finally {
+        // Remove loading state
+        submitBtn.disabled = false;
+        contactForm.classList.remove('loading');
+    }
+});
+
+// Notification system
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateY(0)';
+    });
+    
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateY(-100%)';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Copy email functionality
+const copyBtn = document.querySelector('.copy-btn');
+copyBtn.addEventListener('click', () => {
+    const email = copyBtn.previousElementSibling.textContent;
+    navigator.clipboard.writeText(email).then(() => {
+        showNotification('Email copied to clipboard!', 'success');
+    }).catch(() => {
+        showNotification('Failed to copy email.', 'error');
+    });
+});
+
+// Location button functionality
+const locationBtn = document.querySelector('.location-btn');
+locationBtn.addEventListener('click', () => {
+    const location = 'Raipur, Chhattisgarh, India';
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+    window.open(url, '_blank');
 }); 
