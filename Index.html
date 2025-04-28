@@ -3,42 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <meta name="description" content="Prabhat Tiwari - Full Stack Developer Portfolio showcasing web development projects, skills, and experience">
+    <meta name="keywords" content="Full Stack Developer, Web Development, React, Node.js, MERN Stack, Portfolio">
+    <meta name="author" content="Prabhat Tiwari">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Prabhat Tiwari - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Explore my portfolio of web development projects and technical expertise">
+    <meta property="og:image" content="./assets/IMG_1048.JPG">
+    <meta property="og:url" content="https://your-portfolio-url.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@Prabhat60258016">
+    <meta name="twitter:title" content="Prabhat Tiwari - Full Stack Developer Portfolio">
+    <meta name="twitter:description" content="Explore my portfolio of web development projects and technical expertise">
+    <meta name="twitter:image" content="./assets/IMG_1048.JPG">
+    
+    <title>Prabhat Tiwari - Full Stack Developer Portfolio</title>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <script type="module" src="./js/main.js"></script>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="cursor" role="presentation" aria-hidden="true"></div>
+    <div class="cursor-follower" role="presentation" aria-hidden="true"></div>
     
-    <nav class="navbar">
-        <div class="logo">
-            <span class="logo-text">P</span>
-            <span class="logo-dot"></span>
-            <span class="logo-text">ortfolio</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="logo">
+                <span class="logo-text" aria-label="Portfolio">P</span>
+                <span class="logo-dot" aria-hidden="true"></span>
+                <span class="logo-text">ortfolio</span>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" aria-current="page">Home</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section id="home" class="hero">
+        <section id="home" class="hero" aria-label="Welcome section">
             <div class="hero-content">
                 <h1 class="animate-text">Welcome to My Portfolio</h1>
                 <p class="animate-text">I'm a Creative Developer</p>
             </div>
-            <canvas id="canvas3d"></canvas>
+            <canvas id="canvas3d" aria-hidden="true"></canvas>
         </section>
 
-        <section id="about" class="about">
-            <h2>About Me</h2>
+        <section id="about" class="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="intro">I'm a passionate Full Stack Developer with expertise in creating modern, scalable web applications. With a strong foundation in both frontend and backend technologies, I specialize in building robust solutions that deliver exceptional user experiences.</p>
+                    <div class="profile-summary">
+                        <div class="profile-image">
+                            <a href="./assets/IMG_1048.JPG" target="_blank" rel="noopener noreferrer">
+                                <img src="./assets/IMG_1048.JPG" alt="Prabhat Tiwari - Full Stack Developer" width="200" height="200">
+                            </a>
+                        </div>
+                        <div class="profile-details">
+                            <h3>Prabhat Tiwari</h3>
+                            <p class="title">Full Stack Developer</p>
+                            <p class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Raipur, Chhattisgarh</p>
+                            <div class="profile-links" aria-label="Social media links">
+                                <a href="https://github.com/Prabhat91-a" target="_blank" rel="noopener noreferrer" class="profile-link" title="GitHub Profile" aria-label="Visit my GitHub profile">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/prabhat-tiwari-4b8a63268" target="_blank" rel="noopener noreferrer" class="profile-link" title="LinkedIn Profile" aria-label="Visit my LinkedIn profile">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://twitter.com/Prabhat60258016" target="_blank" rel="noopener noreferrer" class="profile-link" title="Twitter Profile" aria-label="Visit my Twitter profile">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-sections">
+                        <div class="about-section">
+                            <h3>Introduction</h3>
+                            <p class="intro">I'm a passionate Full Stack Developer with expertise in creating modern, scalable web applications. With a strong foundation in both frontend and backend technologies, I specialize in building robust solutions that deliver exceptional user experiences.</p>
+                            <p>I have a keen eye for design and user experience, ensuring that every application I build is not only functional but also visually appealing and intuitive to use. My approach combines technical expertise with creative problem-solving to deliver innovative solutions.</p>
+                        </div>
+                        
+                        <div class="about-section">
+                            <h3>Personal Interests</h3>
+                            <ul class="interests-list">
+                                <li><i class="fas fa-code"></i> Open Source Contribution</li>
+                                <li><i class="fas fa-book"></i> Technical Blogging</li>
+                                <li><i class="fas fa-laptop-code"></i> Competitive Programming</li>
+                                <li><i class="fas fa-users"></i> Tech Community Involvement</li>
+                                <li><i class="fas fa-camera"></i> Photography</li>
+                                <li><i class="fas fa-gamepad"></i> Gaming</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="about-section">
+                            <h3>Achievements</h3>
+                            <ul class="achievements-list">
+                                <li>
+                                    <i class="fas fa-trophy"></i>
+                                    <div>
+                                        <strong>Full Stack Development Certification</strong>
+                                        <p>Completed intensive training in MERN Stack Development with hands-on project experience</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star"></i>
+                                    <div>
+                                        <strong>React.js Project Excellence</strong>
+                                        <p>Developed high-performance React applications with 95% lighthouse performance score</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-certificate"></i>
+                                    <div>
+                                        <strong>AWS Cloud Practitioner</strong>
+                                        <p>Certified in cloud computing fundamentals and AWS services</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-code"></i>
+                                    <div>
+                                        <strong>Open Source Contributor</strong>
+                                        <p>Active contributor to various open-source projects with 50+ merged pull requests</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-laptop-code"></i>
+                                    <div>
+                                        <strong>Technical Blog Author</strong>
+                                        <p>Published 20+ technical articles on web development and software engineering</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     
                     <div class="skills-section">
                         <h3>Technical Skills</h3>
@@ -80,13 +189,13 @@
                             <div class="timeline-item">
                                 <div class="timeline-date">April 2025 - Present</div>
                                 <div class="timeline-content">
-                                    <h4>Software Development Intern</h4>
+                                    <h4>Full Stack Developer Intern</h4>
                                     <p>CodTech IT Solutions</p>
                                     <ul class="experience-details">
-                                        <li>Working on full-stack development projects</li>
-                                        <li>Collaborating with senior developers on real-world applications</li>
-                                        <li>Learning and implementing modern development practices</li>
-                                        <li>Contributing to team projects and code reviews</li>
+                                        <li>Developing full-stack web applications using MERN (MongoDB, Express.js, React.js, Node.js) stack</li>
+                                        <li>Implementing responsive UI designs and RESTful APIs for various client projects</li>
+                                        <li>Collaborating with senior developers on scalable and maintainable code architecture</li>
+                                        <li>Participating in code reviews and agile development practices</li>
                                     </ul>
                                 </div>
                             </div>
@@ -97,7 +206,23 @@
                         <h3>Education</h3>
                         <div class="education-item">
                             <h4>Master of Computer Applications (MCA)</h4>
-                            <p>Specialized in Software Development and Web Technologies</p>
+                            <p class="education-institution">Shri Rawatpura Sarkar University</p>
+                            <p class="education-period">2023 - 2025</p>
+                            <p class="education-details">Specializing in Software Development and Web Technologies with focus on modern development practices and full-stack applications.</p>
+                        </div>
+
+                        <div class="education-item">
+                            <h4>Bachelor of Arts (BA)</h4>
+                            <p class="education-institution">Prof. Rajendra Singh (Rajju Bhaiya) University</p>
+                            <p class="education-period">2020 - 2023</p>
+                            <p class="education-details">Completed Bachelor's degree with a strong foundation in analytical thinking and communication skills.</p>
+                        </div>
+
+                        <div class="education-item">
+                            <h4>Diploma in Computer Applications (DCA)</h4>
+                            <p class="education-institution">Pandit Ravishankar Shukla University</p>
+                            <p class="education-period">2021 - 2022</p>
+                            <p class="education-details">Gained practical knowledge in computer applications, programming fundamentals, and software tools.</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +234,7 @@
             <div class="project-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://picsum.photos/400/300?random=1" alt="Online Voting System">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Online Voting System">
                     </div>
                     <div class="project-info">
                         <h3>Secure Online Voting System</h3>
@@ -125,7 +250,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://picsum.photos/400/300?random=2" alt="Online Learning Platform">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Online Learning Platform">
                     </div>
                     <div class="project-info">
                         <h3>Interactive Learning Platform</h3>
@@ -141,7 +266,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://picsum.photos/400/300?random=3" alt="Progressive Web App">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Health & Fitness PWA">
                     </div>
                     <div class="project-info">
                         <h3>Health & Fitness PWA</h3>
@@ -157,7 +282,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://picsum.photos/400/300?random=4" alt="Virtual Assistant">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Virtual Assistant">
                     </div>
                     <div class="project-info">
                         <h3>AI Virtual Assistant</h3>
@@ -173,75 +298,112 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <h2>Get in Touch</h2>
+        <section id="contact" class="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                         <h3>Email</h3>
-                        <p>your.email@example.com</p>
-                        <button class="copy-btn" data-text="your.email@example.com">Copy Email</button>
+                        <p>prabhat.tiwari@example.com</p>
+                        <button class="copy-btn" aria-label="Copy email address">
+                            <i class="fas fa-copy" aria-hidden="true"></i> Copy
+                        </button>
                     </div>
-                    
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Phone</h3>
-                        <p>+91 1234567890</p>
-                        <button class="copy-btn" data-text="+911234567890">Copy Number</button>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
                         <h3>Location</h3>
-                        <p>Your City, State</p>
-                        <button class="location-btn">View on Map</button>
+                        <p>Raipur, Chhattisgarh, India</p>
+                        <button class="location-btn" aria-label="View location on map">
+                            <i class="fas fa-map" aria-hidden="true"></i> View Map
+                        </button>
                     </div>
                 </div>
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required aria-required="true">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required aria-required="true"></textarea>
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+        <section id="blog" class="blog" aria-labelledby="blog-heading">
+            <h2 id="blog-heading">Latest Articles</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80" alt="Understanding React Hooks" width="400" height="250">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Understanding React Hooks</h3>
+                        <p class="blog-date">March 15, 2024</p>
+                        <p class="blog-excerpt">A comprehensive guide to React Hooks and their practical applications in modern web development.</p>
+                        <a href="#" class="blog-link" aria-label="Read more about Understanding React Hooks">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?w=800&q=80" alt="Node.js Best Practices" width="400" height="250">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Node.js Best Practices</h3>
+                        <p class="blog-date">March 10, 2024</p>
+                        <p class="blog-excerpt">Essential best practices for building scalable and maintainable Node.js applications.</p>
+                        <a href="#" class="blog-link" aria-label="Read more about Node.js Best Practices">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80" alt="MongoDB vs PostgreSQL" width="400" height="250">
+                    </div>
+                    <div class="blog-content">
+                        <h3>MongoDB vs PostgreSQL</h3>
+                        <p class="blog-date">March 5, 2024</p>
+                        <p class="blog-excerpt">A detailed comparison of MongoDB and PostgreSQL for different use cases.</p>
+                        <a href="#" class="blog-link" aria-label="Read more about MongoDB vs PostgreSQL">Read More</a>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="social-links" aria-label="Social media links">
+            <a href="https://github.com/Prabhat91-a" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/in/prabhat-tiwari-4b8a63268" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/Prabhat60258016" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
         </div>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Prabhat Tiwari. All rights reserved.</p>
     </footer>
-
-    <script type="module" src="./js/main.js"></script>
 </body>
 </html> 
