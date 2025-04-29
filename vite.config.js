@@ -14,15 +14,6 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true
       }
-    },
-    rollupOptions: {
-      input: 'index.html',
-      output: {
-        manualChunks: {
-          'three': ['three'],
-          'gsap': ['gsap']
-        }
-      }
     }
   },
   resolve: {
