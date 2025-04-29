@@ -19,6 +19,12 @@ export default defineConfig({
       input: 'index.html'
     }
   },
+  resolve: {
+    alias: {
+      'three': resolve(__dirname, 'node_modules/three'),
+      'gsap': resolve(__dirname, 'node_modules/gsap')
+    }
+  },
   server: {
     port: 3000,
     open: true
