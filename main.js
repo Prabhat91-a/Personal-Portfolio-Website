@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Remove ES module imports since we're using CDN
 // Initialize GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
