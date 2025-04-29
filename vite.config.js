@@ -1,20 +1,38 @@
-{
-  "name": "personal-portfolio",
-  "version": "1.0.0",
-  "description": "A modern portfolio website with advanced animations",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
+export default defineConfig({
+  base: '/', // Changed to root path for Netlify
+  root: '.', // Explicitly set the root directory
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      input: 'index.html',
+      output: {
+        manualChunks: {
+          'three': ['three'],
+          'gsap': ['gsap']
+        }
+      }
+    }
   },
-  "dependencies": {
-    "gsap": "^3.12.7",
-    "three": "^0.161.0",
-    "vite": "^5.4.18"
+  resolve: {
+    alias: {
+      'three': resolve(__dirname, 'node_modules/three'),
+      'gsap': resolve(__dirname, 'node_modules/gsap')
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
+  server: {
+    port: 3000,
+    open: true
+  }
+}); 
